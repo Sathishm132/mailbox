@@ -20,12 +20,13 @@ const Signuppage = () => {
     let {name,value}=e.target
     const enteredvalue= {...formvalue,[name]:value}
     setFormvalues(enteredvalue) 
+    setError(Validation(formvalue));
     
     
    }
    const submithandler=async(e)=>{
     e.preventDefault()
-    setError(Validation(formvalue));
+  
     
  
     
@@ -106,7 +107,7 @@ const Signuppage = () => {
        {error&&<p style={{color:"red"}}>{error.confirmpassword}</p>}
       </Form.Group>
       <div className="d-grid ">
-      <Button variant="primary" type='submit' >
+    <Button variant="primary" type='submit' >
         signUp
       </Button>
       
