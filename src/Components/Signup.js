@@ -1,11 +1,13 @@
 import React, {  useState } from 'react'
 import { Button,  Form } from 'react-bootstrap'
+import { useNavigate } from 'react-router'
 
 import Validation from './validation '
 
 
 
 const Signuppage = () => {
+  const navigate=useNavigate()
    
    const [formvalue,setFormvalues]=useState({
     email:"",
@@ -122,7 +124,9 @@ const Signuppage = () => {
   </div>
   <br/>
   <div className='position-relative d-grid'>
-  <Button variant="outline-success">Have an account? login</Button>
+  <Button variant="outline-success" onClick={()=>{
+    navigate("/signin")
+  }}>Have an account? login</Button>
     </div>
 
 
